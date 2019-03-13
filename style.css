@@ -38,6 +38,12 @@ header nav i {
     margin-top: 1.1em;
 }
 
+.navhartje::before {
+    content: '1';
+    color: lightgreen;
+    margin-right: 0.5em;
+}
+
 #overview section:first-of-type {
     margin-top: 3em;
     background-image: url(images/ibiza-2000x1200.jpg);
@@ -87,6 +93,10 @@ body form {
     color: black;
 }
 
+#overview form input:focus {
+    width: 85%;
+}
+
 #overview form label {
     background-color: rgba(255, 255, 255, 1);
     color: rgb(0, 214, 108);
@@ -115,6 +125,10 @@ body form {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 2em;
+}
+
+#overview > section form button:hover {
+    background-color: #EE728F;
 }
 
 #overview h2 {
@@ -170,7 +184,7 @@ article .plaatje {
 
 #overview main article p {
     margin-left: 1.1em;
-    margin-top: .5em;
+    margin-top: 1.5em;
     margin-bottom: 2em;
     width: 20em;
 
@@ -190,6 +204,10 @@ article .plaatje {
 
 }
 
+#overview main article a:hover {
+    background-color: #514A99;
+}
+
 #overview article i {
     top: 72%;
     left: 20%;
@@ -200,38 +218,11 @@ article .plaatje {
 }
 
 .animation-heart {
-    animation: heart 1.2s ease-in-out 0s;
+    animation: heart 1.5s ease-in-out 0s;
 }
 
-@keyframes heart {
-    0% {
-        top: 72%;
-        left: 20%;
-    }
-    15% {
-        top: 62%;
-    }
-    25% {
-        left: 22%;
-    }
-    45% {
-        top: 60%;
-    }
-    50% {
-        left: 20%;
-    }
-    60% {
-        top: 62%;
-    }
-    75% {
-        left: 19%;
-        transform: rotate(360deg);
-    }
-    100% {
-        top: 72%;
-        left: 20%;
-        transform: rotate(360deg);
-    }
+.animation-bump {
+    animation: bumping 1s ease-in-out 0s;
 }
 
 
@@ -281,11 +272,6 @@ section div article {
 
 #kleurrijk h2 {
     color: #2800a0;
-    margin-left: 15%;
-}
-
-#kleurrijk div {
-    margin-left: 14%;
 }
 
 #kleurrijk article h3 {
@@ -302,13 +288,10 @@ section div article {
 
 }
 
-#spannend div {
-    margin-left: 14%;
-}
+
 
 #spannend h2 {
     color: rgb(0, 214, 108);
-    margin-left: 15%;
 }
 
 #spannend article h3 {
@@ -326,13 +309,10 @@ section div article {
     position: relative;
 }
 
-#diepgaand div {
-    margin-left: 14%;
-}
+
 
 #diepgaand h2 {
     color: #2800a0;
-    margin-left: 15%;
 }
 
 #diepgaand article h3 {
@@ -354,54 +334,28 @@ section div article {
 
 @keyframes dbutton {
     0% {
-        top: 100%;
+        top: 101.2%;
     }
     60% {
         transform: rotate(720deg);
-        top: 100%;
+        top: 101.2%;
     }
     80% {
-        top: 102.5%;
+        top: 103.7%;
     }
     100% {
-        top: 100%;
+        top: 101.2%;
         transform: rotate(720deg);
     }
 }
 
 .download {
     position: absolute;
-    top: 100%;
-    left: 52%;
+    top: 101.2%;
+    left: 54%;
     color: #2800a0;
 }
 
-@keyframes minimize {
-    0% {
-        transform: scale(1, 1);
-    }
-    100% {
-        transform: scale(0, 0);
-    }
-}
-
-@keyframes maximize {
-    0% {
-        transform: scale(0, 0);
-    }
-    60% {
-        transform: scale(1.2, 1.2);
-    }
-    75% {
-        transform: scale(1, 1);
-    }
-    90% {
-        transform: scale(1.05, 1.05);
-    }
-    100% {
-        transform: scale(1, 1);
-    }
-}
 
 .fadeweg {
     animation: minimize .5s ease-in-out 0s;
@@ -418,7 +372,7 @@ section div article {
 
 #favoriet main {
     min-height: 80vh;
-    margin: 4em auto 0;
+    margin: 1em auto 0;
     display: grid;
     grid-template-areas: 30% 30% 30%;
     grid-template-rows: 50% 50%;
@@ -427,9 +381,9 @@ section div article {
 #favoriet > h1 {
     color: #15038C;
     text-align: left;
-    margin-top: 5rem;
+    margin-top: 7rem;
     margin-bottom: .5em;
-    margin-left: 1.5em;
+    margin-left: 14%;
     font-size: 2.5em;
 }
 
@@ -447,6 +401,17 @@ article .plaatje {
     border-radius: 14px;
     margin: 0 0 0 1em;
 }
+
+article .plaatje2 {
+    background-image: url(images/verhalend.png);
+    background-position: center;
+    background-size: cover;
+    width: 20em;
+    height: 10em;
+    border-radius: 14px;
+    margin: 0 0 0 1em;
+}
+
 
 
 #favoriet article {
@@ -513,7 +478,9 @@ article .plaatje {
     font-weight: 700;
 }
 
-
+#favoriet article a:hover {
+    background-color: #514A99;
+}
 
 
 /* login */
@@ -590,6 +557,13 @@ input:valid {
     width: 85%;
 }
 
+#spannend {
+    margin-top: 1.9em;
+}
+
+nav a {
+    text-decoration: none;
+}
 
 #login form fieldset > input:nth-child(6) {
     border-radius: 2.25em;
@@ -759,15 +733,89 @@ input:valid {
     }
 }
 
+@media (min-width: 72em) {
+    #overview main {
+        max-width: 50vw;
+        margin: 0 auto;
+    }
+    #overview main > h2 {
+        width: 15em;
+    }
+    #overview main article {
+        display: grid;
+        grid-template-areas: 40% 30% 30%;
+        grid-template-rows: 25% 54% 20%;
+    }
+    #overview main article div {
+        grid-column: 1/2;
+        grid-row: 1/4;
+    }
+    #overview main article h3 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        margin-top: 0;
+    }
+    #overview main article p {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin-top: 0;
+    }
+    #overview main article a {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+    #overview main article i {
+        grid-column: 2/3;
+        grid-row: 3/4;
+        top: -190%;
+        left: 30%;
+    }
+    .animation-heart {
+        animation: heartbig 1.5s ease-in-out 0s;
+    }
+
+
+
+    #kleurrijk h2 {
+        color: #2800a0;
+        margin-left: 15%;
+    }
+
+    #kleurrijk div {
+        margin-left: 14%;
+    }
+    #spannend div {
+        margin-left: 14%;
+    }
+
+    #spannend h2 {
+        margin-left: 15%;
+    }
+    #diepgaand div {
+        margin-left: 14%;
+    }
+
+    #diepgaand h2 {
+        margin-left: 15%;
+    }
+}
+
 /* favoriet */
+
+@media (min-width: 65em) {
+    #favoriet > h1 {
+        margin-left: 1.4%;
+    }
+}
 
 @media (min-width: 75em) {
     #favoriet main {
         width: 74%;
     }
+    #favoriet > h1 {
+        margin-left: 14%;
+    }
 }
-
-
 
 
 @media (max-width: 65em) {
@@ -792,9 +840,12 @@ input:valid {
     #favoriet article:nth-last-of-type(6) {
         display: none;
     }
+    #favoriet > h1 {
+        margin-left: 5%;
+    }
 }
 
-@media (max-width: 42em) {
+@media (max-width: 44em) {
     #favoriet main {
         width: 80%;
         grid-template-areas: 100%;
@@ -812,6 +863,9 @@ input:valid {
     #favoriet article:nth-last-of-type(5),
     #favoriet article:nth-last-of-type(6) {
         display: none;
+    }
+    #favoriet > h1 {
+        margin-left: 14%;
     }
 }
 
@@ -852,5 +906,123 @@ input:valid {
 @media (min-width: 70em) {
     #login form {
         width: 40%;
+    }
+}
+
+/*keyframe*/
+
+@keyframes heart {
+    0% {
+        top: 72%;
+        left: 20%;
+    }
+    15% {
+        top: 65%;
+    }
+    25% {
+        left: 22%;
+    }
+    45% {
+        top: 64%;
+    }
+    50% {
+        left: 20%;
+    }
+    60% {
+        top: 65%;
+    }
+    65% {
+        left: 19%;
+        transform: rotate(360deg);
+    }
+    85% {
+        top: 74%;
+        left: 20.5%;
+    }
+    100% {
+        top: 72%;
+        left: 20%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes heartbig {
+    0% {
+        top: -190%;
+        left: 30%;
+    }
+    15% {
+        top: -265%;
+    }
+    25% {
+        left: 32%;
+    }
+    45% {
+        top: -278%;
+    }
+    50% {
+        left: 30%;
+    }
+    60% {
+        top: -265%;
+    }
+    65% {
+        left: 29%;
+        transform: rotate(360deg);
+    }
+    85% {
+        top: -175%;
+        left: 30.5%;
+    }
+    100% {
+        top: -190%;
+        left: 30%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bumping {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1.1, 1.1);
+    }
+    50% {
+        transform: scale(1, 1);
+    }
+    75% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+
+}
+
+@keyframes minimize {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(0, 0);
+    }
+}
+
+@keyframes maximize {
+    0% {
+        transform: scale(0, 0);
+    }
+    60% {
+        transform: scale(1.2, 1.2);
+    }
+    75% {
+        transform: scale(1, 1);
+    }
+    90% {
+        transform: scale(1.05, 1.05);
+    }
+    100% {
+        transform: scale(1, 1);
     }
 }
