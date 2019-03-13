@@ -3,7 +3,7 @@
     font-family: 'PT-sans', sans-serif;
     transition: all 0.5s;
     @import url(//db.onlinewebfonts.com/c/c9f309b3d47969ecac64a77a6c672594?family=Nexa+Bold);
-    font-family: "Nexa Bold";
+    font-family: "Nexa Bold", sans-serif, 'helvetica';
 
 }
 
